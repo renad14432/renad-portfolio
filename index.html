@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Renad — Computer Engineer · Software Developer · UI/UX Designer</title>
+<meta name="description" content="Portfolio of Renad Aladwani: Computer Engineer, Software Developer, and UI/UX Designer from Taif University." />
+<meta property="og:title" content="Renad — Portfolio" />
+<meta property="og:description" content="Computer Engineering graduate building thoughtful digital experiences." />
+<meta name="theme-color" content="#ffffff" />
+<script>try{var t=sessionStorage.getItem("theme")||"light";document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","light")}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='6' width='52' height='52' rx='12' fill='%23fff' stroke='%23111' stroke-width='5'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='32' font-weight='800' font-family='Arial' fill='%23111'%3ER%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&family=Space+Mono:wght@400;700&family=Unbounded:wght@800&display=swap" rel="stylesheet" />
+<style>
+html{scroll-behavior:auto;background:#fff;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}body{-webkit-text-size-adjust:100%;text-size-adjust:100%}html[data-theme=dark]{background:#141414}
+body{margin:0;background:inherit;overflow-x:hidden}
+#app{display:block}.bd{display:block;margin-inline:auto;overflow:clip}
+.wipe{position:fixed;inset:0;z-index:150;pointer-events:none;visibility:hidden;--e2:cubic-bezier(.76,0,.24,1);background:#fff radial-gradient(rgba(17,17,17,.22) 1px,transparent 1.4px) 0 0/22px 22px;color:#111;display:grid;place-items:center;font:800 clamp(28px,8vw,72px) Unbounded,sans-serif;letter-spacing:.2em;transform:translateY(101%);border-radius:40px 40px 0 0;will-change:transform}
+:root[data-theme=dark] .wipe{background:#141414 radial-gradient(rgba(255,255,255,.35) 1px,transparent 1.4px) 0 0/22px 22px;color:#fff}
+.wipe.fromtop{transform:translateY(-101%);border-radius:0 0 40px 40px}
+.wipe.on,.wipe.off{visibility:visible}
+.wipe.on{transform:translateY(0);border-radius:0;transition:transform .5s var(--e2),border-radius .5s var(--e2)}
+.wipe.off{transform:translateY(-101%);border-radius:0 0 40px 40px;transition:transform .6s var(--e2),border-radius .6s var(--e2)}
+.wipe.fromtop.off{transform:translateY(101%);border-radius:40px 40px 0 0}
+.wipe span{opacity:0;transform:scale(.9);letter-spacing:.35em;transition:opacity .3s,transform .5s var(--e2),letter-spacing .5s var(--e2)}
+.wipe.ar span{font-family:Cairo,Unbounded,sans-serif;letter-spacing:0!important;font-weight:800}
+.wipe.on span{opacity:1;transform:none;letter-spacing:.2em;transition-delay:.18s}.wipe.off span{opacity:0;transform:scale(1.06)}
+.totop{position:fixed;right:16px;bottom:16px;z-index:60;width:42px;height:42px;display:grid;place-items:center;border:2px solid #111;border-radius:12px;background:#fff;color:#111;box-shadow:3px 3px 0 #111;font:700 18px "Space Mono",monospace;text-decoration:none;opacity:0;pointer-events:none;transition:opacity .3s}
+.totop.show{opacity:1;pointer-events:auto}
+html[data-theme=dark] .totop{filter:invert(.92) hue-rotate(180deg)}
+.skip{position:absolute;left:-999px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);opacity:0;z-index:300;background:#111;color:#fff;border-radius:10px;padding:10px 16px;font:700 12px "Space Mono",monospace;transition:.3s;pointer-events:none}.toast.show{opacity:1;transform:translateX(-50%)}
+@media(max-width:899px){.totop{width:32px;height:32px;right:10px;bottom:10px;font-size:14px;border-radius:9px;box-shadow:2px 2px 0 #111}}
+
+body.paged{overflow:hidden;height:100dvh}body.paged .totop{display:none}
+.pgwrap{position:fixed;left:0;right:0;bottom:0;top:46px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;display:none;background:#fff;will-change:transform}
+html[data-theme=dark] .pgwrap{background:#141414}.pgwrap.cur{display:block}
+html.splashing,html.splashing body{overflow:hidden}
+.splash{--k:#111;--p:#fff;position:fixed;inset:0;z-index:400;background:#fff radial-gradient(rgba(17,17,17,.16) 1px,transparent 1.3px) 0 0/22px 22px;display:grid;place-items:center;padding:24px;cursor:pointer;color:#111;font-family:"Space Mono",monospace;transition:transform .72s cubic-bezier(.76,0,.24,1)}
+html[data-theme=dark] .splash{--k:#f2f2f2;--p:#141414;background:#141414 radial-gradient(rgba(255,255,255,.16) 1px,transparent 1.3px) 0 0/22px 22px;color:#f2f2f2}
+.splash.out{transform:translateY(-100%)}
+.sp-win{width:min(440px,100%);border:2px solid var(--k);border-radius:14px;background:var(--p);box-shadow:10px 10px 0 var(--k);overflow:hidden;animation:spr .9s cubic-bezier(.16,1,.3,1) backwards}
+.sp-b{display:flex;justify-content:space-between;padding:5px 14px;border-bottom:2px solid var(--k);font:700 12px "Space Mono",monospace;letter-spacing:.1em}
+.sp-in{padding:34px 26px 28px;display:grid;gap:18px;justify-items:center;text-align:center}
+.sp-pill{border:2px solid var(--k);border-radius:12px;box-shadow:4px 4px 0 var(--k);padding:7px 18px;font:700 13px "Space Mono",monospace;background:var(--p)}
+.sp-h{font:800 clamp(34px,11vw,60px) Unbounded,sans-serif;letter-spacing:.14em;clip-path:inset(0 100% 0 0);animation:spreveal 1s steps(5,end) .5s forwards}
+.sp-s{font-size:13px}.sp-bar{width:min(300px,68vw);height:14px;border:2px solid var(--k);border-radius:8px;overflow:hidden}.sp-bar i{display:block;height:100%;width:0;background:var(--k);animation:spfill 2.2s cubic-bezier(.65,0,.35,1) .3s forwards}
+.sp-hint{font-size:11px;letter-spacing:.06em;opacity:.75}.sp-skip{position:absolute;bottom:22px;font-size:11px;letter-spacing:.12em;opacity:.6}
+.sp-s1,.sp-s2{position:absolute;color:var(--k)}.sp-s1{left:14%;top:20%}.sp-s2{right:16%;bottom:22%}.sp-st{animation:sptw 4s ease-in-out infinite}
+@keyframes spr{from{opacity:0;transform:translateY(26px)}}@keyframes spreveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(-10% -10% -10% -10%)}}@keyframes spfill{to{width:100%}}@keyframes sptw{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.2) rotate(30deg)}}
+@media(prefers-reduced-motion:reduce){.splash{display:none}}
+@media(prefers-reduced-motion:reduce){.wipe{display:none}}
+</style>
+<style>
+.lb{position:fixed;inset:0;z-index:2000;background:rgba(10,10,10,.88);display:flex;align-items:center;justify-content:center;padding:56px 16px 64px;opacity:0;transition:opacity .2s ease;cursor:zoom-out}
+.lb.on{opacity:1}
+.lb img{max-width:min(96vw,1100px);max-height:100%;object-fit:contain;background:#fff;border:2px solid #111;border-radius:8px;box-shadow:6px 6px 0 rgba(255,255,255,.25)}
+.lb-x{position:absolute;top:12px;right:12px;width:44px;height:44px;border:2px solid #111;border-radius:10px;background:#fff;color:#111;font:700 26px/1 'Space Mono',monospace;cursor:pointer;box-shadow:2px 2px 0 #111}
+.lb-x:focus-visible{outline:2px dashed #fff;outline-offset:3px}
+.lb-c{position:absolute;left:16px;right:16px;bottom:16px;text-align:center;color:#fff;font:400 13px/1.4 'Space Mono',monospace}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="menu" aria-hidden="true"></div>
+<a class="totop" href="#home" aria-label="Back to top" data-top>↑</a>
+<div class="wipe" aria-hidden="true"><span>RENAD</span></div>
+<div class="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px;font-family:sans-serif">Please enable JavaScript to view this portfolio.</p></noscript>
+<script src="boards.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
